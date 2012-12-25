@@ -1,0 +1,24 @@
+name: Flickr Image
+id: FlickrImage
+key: FlickrImage
+description: Flickrの画像を記事に挿入します
+author_name: 'F.S.D.'
+author_link: http://www.f-s-d.jp/
+version: 0.1
+system_config_template: flickrimage_system_config.tmpl
+settings:
+    username:
+        default: username
+    api_key:
+        default: api_key
+    secret:
+        default: secret
+
+callbacks:
+  *::pre_build: $FlickrImage::FlickrImage::Plugin::prepareFlickrImages
+
+tags:
+  block:
+    FlickrImages: $FlickrImage::FlickrImage::Plugin::getFlickrImages
+  function:
+    FlickrImage: $FlickrImage::FlickrImage::Plugin::getValue
