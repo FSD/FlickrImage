@@ -120,8 +120,6 @@ sub prepareFlickrImages {
   }
   my @photos = $flickr->getPhotosByUserid({user_id=>$userid});
 
-  doLog("key...".join(",",keys(%{$photos[0]})));
-
   if($flickr->{is_error}){
     doLog("ERROR Plugin::FlickrImage 002: ".$flickr->{errormsg});
     exit;
