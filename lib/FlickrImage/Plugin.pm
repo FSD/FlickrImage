@@ -173,7 +173,6 @@ sub entrySubstr {
   $end = 0;
   $end = $tmp[2];
 
-  doLog("entrySubstr(name,start,end)=>[".$name.",".$start.",".$end."]");
   my $returnWord = "";
   if($end == 0){
     $returnWord = substr($entry->$name,$start);
